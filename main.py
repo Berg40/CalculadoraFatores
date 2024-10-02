@@ -75,21 +75,25 @@ Trabalho (W) = {trabalho} J"""
     # Adicionando os controles à página
     page.add(
         ft.Container(
-            image_src='images/VideoCapture_20241001-182605.jpg',
-            image_fit=ft.ImageFit.COVER,
-            image_opacity=0.4,
+            gradient=ft.LinearGradient(
+                begin=ft.alignment.top_center,
+                end=ft.alignment.bottom_center,
+                colors=[ft.colors.WHITE54, ft.colors.GREY_600]
+            ),
             margin=0,
             padding=10,
 
             content=ft.Column(
+                spacing=20,
                 scroll=ft.ScrollMode.AUTO,
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 controls=[
-                    ft.Text(value="Calculadora de Fatores Físicos", size=20, weight=ft.FontWeight.BOLD),
-                    ft.Text("Insira os valores necessários para cada cálculo:"),
+                    ft.Text(value="Calculadora de Fatores Físicos", size=30, weight=ft.FontWeight.BOLD),
+                    ft.Text("Insira os valores necessários para cada cálculo:", size=20),
                     ft.Divider(),
 
                     ft.Text(value="Força (F) = Massa (kg) × Aceleração (m/s²)",
+                            size=18,
                             color=ft.colors.BLACK
                             ),
                     massa_input,
@@ -98,7 +102,8 @@ Trabalho (W) = {trabalho} J"""
 
                     ft.Divider(),
                     ft.Text(value="Energia Cinética (K.E.) = ½ × Massa (kg) × Velocidade² (m/s)",
-                            color=ft.colors.BLACK
+                            color=ft.colors.BLACK,
+                            size=18,
                             ),
                     massa_input,
                     velocidade_input,
@@ -106,7 +111,8 @@ Trabalho (W) = {trabalho} J"""
 
                     ft.Divider(),
                     ft.Text(value="Energia Potencial Gravitacional (P.E.) = Massa (kg) × Gravidade (9.81 m/s²) × Altura (m)",
-                            color=ft.colors.BLACK
+                            color=ft.colors.BLACK,
+                            size=18
                             ),
                     massa_input,
                     altura_input,
@@ -114,7 +120,8 @@ Trabalho (W) = {trabalho} J"""
 
                     ft.Divider(),
                     ft.Text(value="Trabalho (W) = Força (N) × Deslocamento (m) × cos(θ)",
-                            color=ft.colors.BLACK
+                            color=ft.colors.BLACK,
+                            size=18
                             ),
                     forca_input,
                     deslocamento_input,
